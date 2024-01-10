@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="solver.js"></script>
+    <style>
+        .cubeConfiguration {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .containerColorPalet {
+            display: grid;
+            grid-template-columns: repeat(6, 10px);
+            grid-gap: 10px;
+        }
+
+        .containerColorFillRep3 {
+            display: grid;
+            grid-template-columns: repeat(3, 10px);
+            grid-gap: 10px;
+            margin-left: 0px;
+        }
+
+        .containerColorFillRep4 {
+            display: grid;
+            grid-template-columns: repeat(4, 60px);
+            grid-gap: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .color-box {
+            width: 15px;
+            height: 15px;
+            cursor: pointer;
+            border: 2px solid black;
+            background-color: lightgray;
+            margin-bottom: 5px;
+            border-radius: 20%;
+            box-sizing: border-box;
+
+        }
+
+        .color-box:hover {
+            border-width: 2.5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="containerColorPalet">
+        <div class="color-box" id="redPalet" style="background-color: red" onclick="selectColor(this)"></div>
+        <div class="color-box" id="yellowPalet" style="background-color: yellow" onclick="selectColor(this)"></div>
+        <div class="color-box" id="greenPalet" style="background-color: green" onclick="selectColor(this)"></div>
+        <div class="color-box" id="bluePalet" style="background-color: blue" onclick="selectColor(this)"></div>
+        <div class="color-box" id="orangePalet" style="background-color: orange" onclick="selectColor(this)"></div>
+        <div class="color-box" id="whitePalet" style="background-color: white" onclick="selectColor(this)"></div>
+    </div>
+    <br>
+    <div class="cubeConfiguration">
+        <div style="margin-left: 70px">
+            <div class="containerColorFillRep3">
+                <div class="color-box" onclick="applyColor(this)"></div>
+                <div class="color-box" onclick="applyColor(this)"></div>
+                <div class="color-box" onclick="applyColor(this)"></div>
+            </div>
+            <div class="containerColorFillRep3">
+                <div class="color-box" onclick="applyColor(this)"></div>
+                <div class="color-box" onclick="applyColor(this)"></div>
+                <div class="color-box" onclick="applyColor(this)"></div>
+            </div>
+            <div class="containerColorFillRep3">
+                <div class="color-box" onclick="applyColor(this)"></div>
+                <div class="color-box" onclick="applyColor(this)"></div>
+                <div class="color-box" onclick="applyColor(this)"></div>
+            </div>
+        </div>
+        <div class="containerColorFillRep4">
+            <div>
+                <div class="containerColorFillRep3">
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                </div>
+                <div class="containerColorFillRep3">
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                </div>
+                <div class="containerColorFillRep3">
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                </div>
+            </div>
+            <div>
+                <div class="containerColorFillRep3">
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                </div>
+                <div class="containerColorFillRep3">
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                </div>
+                <div class="containerColorFillRep3">
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                </div>
+            </div>
+            <div>
+                <div class="containerColorFillRep3">
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                </div>
+                <div class="containerColorFillRep3">
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                </div>
+                <div class="containerColorFillRep3">
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                </div>
+            </div>
+            <div>
+                <div class="containerColorFillRep3">
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                </div>
+                <div class="containerColorFillRep3">
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                </div>
+                <div class="containerColorFillRep3">
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                    <div class="color-box" onclick="applyColor(this)"></div>
+                </div>
+            </div>
+        </div>
+        <div style="margin-left: 70px">
+            <div class="containerColorFillRep3">
+                <div class="color-box" onclick="applyColor(this)"></div>
+                <div class="color-box" onclick="applyColor(this)"></div>
+                <div class="color-box" onclick="applyColor(this)"></div>
+            </div>
+            <div class="containerColorFillRep3">
+                <div class="color-box" onclick="applyColor(this)"></div>
+                <div class="color-box" onclick="applyColor(this)"></div>
+                <div class="color-box" onclick="applyColor(this)"></div>
+            </div>
+            <div class="containerColorFillRep3">
+                <div class="color-box" onclick="applyColor(this)"></div>
+                <div class="color-box" onclick="applyColor(this)"></div>
+                <div class="color-box" onclick="applyColor(this)"></div>
+            </div>
+        </div>
+    </div>
+    <button onclick="solveThis()">Solve</button>
+    <button onclick="emptySolution()">Clear Solution Area</button>
+    <p id="Output"></p>
+    <script>
+        const s = "";
+        const SOLVED_EDGE_POS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+        const SOLVED_CORNER_POS = [0, 1, 2, 3, 4, 5, 6, 7];
+        const SOLVED_EDGE_ORIENTATION = [3, 3, 3, 3, 2, 2, -2, -2, -3, -3, -3, -3];
+        const SOLVED_CORNER_ORIENTATION = [3, 3, 3, 3, -3, -3, -3, -3];
+        const edgePosForNumber = new Map([[0, 0b100010], [1, 0b100100], [2, 0b101000], [3, 0b110000], [4, 0b010010], [5, 0b000110], [6, 0b001100], [7, 0b011000], [8, 0b000011], [9, 0b000101], [10, 0b001001], [11, 0b010001]]);
+        const edgeIndicesForPos = new Map([[0b100010, [1, 37]], [0b100100, [5, 28]], [0b101000, [7, 19]], [0b110000, [3, 10]], [0b010010, [12, 41]], [0b000110, [32, 39]], [0b001100, [23, 30]], [0b011000, [14, 21]], [0b000011, [43, 52]], [0b000101, [34, 50]], [0b001001, [25, 46]], [0b010001, [16, 48]]]);
+        const cornerPosForNumber = new Map([[0, 0b110010], [1, 0b100110], [2, 0b101100], [3, 0b111000], [4, 0b010011], [5, 0b000111], [6, 0b001101], [7, 0b011001]]);
+        const cornerIndicesForPos = new Map([[0b110010, [0, 9, 38]], [0b100110, [2, 29, 36]], [0b101100, [8, 20, 27]], [0b111000, [6, 11, 18]], [0b010011, [15, 44, 51]], [0b000111, [35, 42, 53]], [0b001101, [26, 33, 47]], [0b011001, [17, 24, 45]]]);
+        const edgeNumberForPos = new Map([[0b100010, 0], [0b100100, 1], [0b101000, 2], [0b110000, 3], [0b010010, 4], [0b000110, 5], [0b001100, 6], [0b011000, 7], [0b000011, 8], [0b000101, 9], [0b001001, 10], [0b010001, 11]]);
+        const cornerNumberForPos = new Map([[0b110010, 0], [0b100110, 1], [0b101100, 2], [0b111000, 3], [0b010011, 4], [0b000111, 5], [0b001101, 6], [0b011001, 7]]);
+        const allColorBoxes = document.querySelectorAll(".color-box:not(#redPalet):not(#yellowPalet):not(#greenPalet):not(#bluePalet):not(#orangePalet):not(#whitePalet)");
+
+        for (var i = 0; i < 54; i++)
+            allColorBoxes[i].id = `c${i}`, allColorBoxes[i].backgroundColor = "rgb(211, 211, 211)";
+
+        var selectedColor;
+        var selectedBox = null;
+
+        function selectColor(box) {
+            selectedBox = box;
+            var computedStyle = window.getComputedStyle(selectedBox);
+            selectedColor = computedStyle.backgroundColor;
+            document.querySelector("#currentColor").innerHTML = computedStyle.backgroundColor;
+        }
+
+        function applyColor(box) {
+            if (selectedBox !== null) {
+                box.backgroundColor = selectedColor;
+                box.style.backgroundColor = selectedColor;
+            }
+        }
+
+        function convertCubeConfigToString() {
+            var config = "";
+            const colorMapping = {
+                "rgb(255, 0, 0)": "r",
+                "rgb(255, 255, 0)": "y",
+                "rgb(0, 128, 0)": "g",
+                "rgb(0, 0, 255)": "b",
+                "rgb(255, 165, 0)": "o",
+                "rgb(255, 255, 255)": "w",
+                "rgb(211, 211, 211)": "X"
+            };
+            for (var i = 0; i < 54; i++) {
+                config = config + colorMapping[allColorBoxes[i].backgroundColor];
+            }
+            return config;
+        }
+
+        function colorToMatrix(colorInput) {
+            const c = [[SOLVED_EDGE_POS.slice(), SOLVED_EDGE_ORIENTATION.slice()], [SOLVED_CORNER_POS.slice(), SOLVED_CORNER_ORIENTATION.slice()]];
+            const basicPositions = "ULFRBD";
+            let givenPositions = "";
+            const basicPositionsInfo = [4, 13, 22, 31, 40, 49];
+            const basicOrientationInfo = [3, -1, -2, 1, 2, -3];
+
+            for (const i of basicPositionsInfo) {
+                givenPositions += colorInput[i];
+            }
+
+            for (let i = 0; i < 12; i++) {
+                let x = 0;
+                for (const j of givenPositions) {
+                    let flag = 0;
+                    for (const k of edgeIndicesForPos.get(edgePosForNumber.get(i))) {
+                        if (colorInput[k] === j) {
+                            flag = 1;
+                        }
+                    }
+                    x = 2 * x + flag;
+                }
+                c[0][0][edgeNumberForPos.get(x)] = i;
+            }
+
+            for (let i = 0; i < 8; i++) {
+                let x = 0;
+                for (const j of givenPositions) {
+                    let flag = 0;
+                    for (const k of cornerIndicesForPos.get(cornerPosForNumber.get(i))) {
+                        if (colorInput[k] === j) {
+                            flag = 1;
+                        }
+                    }
+                    x = 2 * x + flag;
+                }
+                c[1][0][cornerNumberForPos.get(x)] = i;
+            }
+
+            for (let i = 0; i < 4; i++) {
+                for (const j of edgeIndicesForPos.get(edgePosForNumber.get(c[0][0][i]))) {
+                    if (colorInput[j] === givenPositions[0]) {
+                        c[0][1][i] = basicOrientationInfo[Math.floor(j / 9)];
+                    }
+                }
+            }
+
+            for (let i = 4; i < 8; i++) {
+                for (const j of edgeIndicesForPos.get(edgePosForNumber.get(c[0][0][i]))) {
+                    if (colorInput[j] === givenPositions[2] || colorInput[j] === givenPositions[4]) {
+                        c[0][1][i] = basicOrientationInfo[Math.floor(j / 9)];
+                    }
+                }
+            }
+
+            for (let i = 8; i < 12; i++) {
+                for (const j of edgeIndicesForPos.get(edgePosForNumber.get(c[0][0][i]))) {
+                    if (colorInput[j] === givenPositions[5]) {
+                        c[0][1][i] = basicOrientationInfo[Math.floor(j / 9)];
+                    }
+                }
+            }
+
+            for (let i = 0; i < 8; i++) {
+                for (const j of cornerIndicesForPos.get(cornerPosForNumber.get(c[1][0][i]))) {
+                    if (colorInput[j] === givenPositions[0] || colorInput[j] === givenPositions[5]) {
+                        c[1][1][i] = basicOrientationInfo[Math.floor(j / 9)];
+                    }
+                }
+            }
+
+            return c;
+        }
+        function solveThis() {
+            var scrambledState = convertCubeConfigToString();
+            console.log(scrambledState);
+            var coord = colorToMatrix(scrambledState);
+            var ep = coord[0][0], eo = coord[0][1], cp = coord[1][0], co = coord[1][1];
+            var [ep0, ep1, ep2, ep3, ep4, ep5, ep6, ep7, ep8, ep9, ep10, ep11] = ep;
+            var [eo0, eo1, eo2, eo3, eo4, eo5, eo6, eo7, eo8, eo9, eo10, eo11] = eo;
+            var [cp0, cp1, cp2, cp3, cp4, cp5, cp6, cp7] = cp;
+            var [co0, co1, co2, co3, co4, co5, co6, co7] = co;
+            var ptr = Module._solver(ep0, ep1, ep2, ep3, ep4, ep5, ep6, ep7, ep8, ep9, ep10, ep11,
+                eo0, eo1, eo2, eo3, eo4, eo5, eo6, eo7, eo8, eo9, eo10, eo11,
+                cp0, cp1, cp2, cp3, cp4, cp5, cp6, cp7,
+                co0, co1, co2, co3, co4, co5, co6, co7);
+            var str = UTF8ToString(ptr);
+            document.querySelector("#Output").innerHTML = `${str}`;
+        }
+        function emptySolution() {
+            document.querySelector("#Output").innerHTML = "";
+            for (var i = 0; i < 54; i++)
+                allColorBoxes[i].style.backgroundColor = allColorBoxes[i].backgroundColor = "rgb(211, 211, 211)";
+        }
+    </script>
+</body>
+
+</html>
+
+<!-- emcc solver.cpp -o solver.js -O3 -s NO_EXIT_RUNTIME=1 -s EXPORTED_RUNTIME_METHODS=[ccall] -s ALLOW_MEMORY_GROWTH -->
