@@ -1,0 +1,6 @@
+Some commands for optimizing cpp codes
+
+
+g++ -O3 -march=native -flto -funroll-loops -pthread -mtune=native -fPIC -o <Name of the exec file> <Name of the actual cpp code>
+
+g++ -O3 -march=native -flto -funroll-loops -o <Name of the exec file> <Name of the actual cpp code>
